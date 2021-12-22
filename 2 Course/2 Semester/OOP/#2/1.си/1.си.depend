@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1551701535 source:c:\users\catov\desktop\ООП\2лаб\1.си\main.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+

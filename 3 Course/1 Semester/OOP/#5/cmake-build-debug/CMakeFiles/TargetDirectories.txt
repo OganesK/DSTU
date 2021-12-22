@@ -1,0 +1,3 @@
+/Users/constantineoganesyants/Documents/DSTU/OOP/#5/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/constantineoganesyants/Documents/DSTU/OOP/#5/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/constantineoganesyants/Documents/DSTU/OOP/#5/cmake-build-debug/CMakeFiles/_5.dir

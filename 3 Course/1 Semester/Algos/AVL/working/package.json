@@ -1,0 +1,16 @@
+{
+  "name": "working",
+  "version": "1.0.0",
+  "description": "",
+  "main": "AVL_TREE.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10",
+    "treeify": "^1.1.0"
+  }
+}

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1551122664 source:c:\users\catov\desktop\ООП\2лаб\9.++\main.cpp
+	<iostream>
+	<iomanip>
+	<stdlib.h>
+
