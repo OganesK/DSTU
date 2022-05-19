@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Sansita Swashed';
+  src: URL('SansitaSwashed-VariableFont_wght.ttf') format('truetype');
+}
+
+.left_menu {
+  font-family: 'Sansita Swashed';
+  float:left;
+  width:24%; 
+  margin-left:1%;
+  padding-bottom:55px;
+}
+
+.main {
+  font-family: 'Sansita Swashed';
+  float:right; width:74%;padding-bottom:55px;
+}
+
+.Main_text{
+  font-family: 'Sansita Swashed';
+  front-size:14pt
+}
+
+footer {
+  font-family: 'Sansita Swashed';
+  background:#DCAE7D;
+  position: fixed;
+  left : 0 ; bottom : 0;
+  width:100%;
+}
+
+body, h1{
+  font-family: 'Sansita Swashed';
+	margin: 0;
+	padding:0;
+}
+
+html {
+  font-family: 'Sansita Swashed';
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #F6D7B4;
+}
+
+header {
+  font-family: 'Sansita Swashed';
+  width: 100%;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  background: url(https://www.heathrow.com/content/dam/heathrow/web/common/images/hero/desktop/at-the-airport/shops-a-z/cartier-1920x624.jpg/_jcr_content/renditions/cq5dam.web.1680.624.jpeg) center no-repeat;
+  background-size: cover;
+}
+ 
+.site-title {
+  font-family: 'Sansita Swashed';
+  text-align: center;
+  text-transform: uppercase;
+}
+
+table {
+  font-family: 'Sansita Swashed';
+  border: 1px solid #F6D7B4;width:100%;
+}
