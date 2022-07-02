@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String @default(uuid()) @id
+  firstName String
+  lastName  String
+  age       Int
+  login     String  @unique
+  password  String
+  role      userRole  @default(client)
+  medicalPatientRecord medicalRecord[]
+  medicalDentistRecord medicalRecord[]  @relation("Dentist")
+
+  tokenVersion  Int?
+}
+
+model dentalDisease {
+  id        String  @default(uuid()) @id
+  name      String  @unique
+
+  medicalRecords  medicalRecord[]
+}
+
+model dentalProcedure {
+  id        String  @default(uuid())  @id
+  name      String  @unique
+  price     Float
+
+  medicalRecords  medicalRecord[]
+}
+
+model medicalRecord {
+  id    String  @default(uuid()) @id
+  date  DateTime
+  patientId   String
+  patient     User    @relation(fields: [patientId], references: [id])
+  dentistId   String
+  dentist     User  @relation("Dentist", fields: [dentistId], references: [id])
+  totalPrice  Float
+
+  diseases    dentalDisease[]
+  procedures   dentalProcedure[]
+}
+
+enum userRole {
+  client
+  dentist
+}

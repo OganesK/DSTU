@@ -26,7 +26,7 @@ class Individual:
         self.phenotype = -1
 
     def print(self):
-        print([self.value,self.phenotype])
+        print(colored([self.value,self.phenotype], 'red'))
 
 
 def make_interval_array(n):
@@ -45,7 +45,7 @@ def make_first_generation(m,individual_value,intervals_array,array):
     for i in range(0,individual_value):
         individual = Individual([random.randint(0, 255) for i in range(0, m)])
         individuals_array.append(individual)
-        print(colored("Первое поколение:", 'green'))
+    print(colored("Первое поколение:", 'green'))
     make_phenotype(individuals_array,intervals_array,array)
     for q in individuals_array:
         q.print()
@@ -95,17 +95,17 @@ def mutation(pair_result,inteervals_array,array):
             continue
         else:
             mutation_point = random.randint(0,len(individuals_array)-1)
-            print("Элемент на замену:",mutation_point)
+            print(colored(("Элемент на замену:",mutation_point), 'green'))
             mutation_index = random.randint(0,7)
-            print("Разряд для замены:",mutation_index)
+            print(colored(("Разряд для замены:",mutation_index), 'green'))
             mutation_index2 = random.randint(0,7)
             while (mutation_index==mutation_index2):
                 mutation_index2 = random.randint(0,7)
-            print("Разряд для замены2:", mutation_index2)
+            print(colored(("Разряд для замены2:", mutation_index2), 'green'))
             mutation_element = bin(individual.value[mutation_point]).replace("0b","")
             while(len(mutation_element)!=8):
                 mutation_element = "0"+mutation_element
-            print("Элемент в двоичной системе исчисления до преобразований:",mutation_element)
+            print(colored(("Элемент в двоичной системе исчисления до преобразований:",mutation_element), 'green'))
             mutation_element_result = ""
             mutation_simvol1 = mutation_element[mutation_index]
             mutation_simvol2 = mutation_element[mutation_index2]
@@ -118,11 +118,11 @@ def mutation(pair_result,inteervals_array,array):
                     continue
                 else:
                     mutation_element_result = mutation_element_result+mutation_element[q]
-            print("Элемент после мутации:", mutation_element_result)
+            print(colored(("Элемент после мутации:", mutation_element_result), 'green'))
             mutation_element = int(mutation_element_result,base=2)
             (individual.value)[mutation_point] = mutation_element
 
-    print("Пара после мутации:")
+    print(colored("Пара после мутации:", 'green'))
     pair_result = make_phenotype(pair_result,intervals_array,array)
     for q in pair_result:
         q.print()
@@ -205,26 +205,26 @@ def reproduction(individuals_array,pk,pm,intervals_array,kpovtor):
             if individual.phenotype<best_individual.phenotype:
                 best_individual = individual
         best_individuals_in_generation.append(best_individual)
-    print("Лучшие особи в поколениях:")
+    print(colored("Лучшие особи в поколениях:", 'red'))
     for y in best_individuals_in_generation:
         y.print()
 
-# m = int(input("Введите число заданий m "))
-# n = int(input("Введите число процессоров n "))
-# a = int(input("Введите начало диапазона для заданий "))
-# b = int(input("Введите конец диапазона для заданий "))
-# pk = float(input("Введите вероятность кроссовера "))
-# pm = float(input("Введите вероятность мутации "))
-# kpovtor = int(input("Введите количество раз, когда лучшая особь повторяется в поколении "))
-# individual_value = int(input("Введите количество особей в начальном поколении "))
-m=8
-n=4
-a=10
-b=20
-pk=0.89
-pm=0.8
-kpovtor=4
-individual_value=4
+m = int(input("Введите число заданий m "))
+n = int(input("Введите число процессоров n "))
+a = int(input("Введите начало диапазона для заданий "))
+b = int(input("Введите конец диапазона для заданий "))
+pk = float(input("Введите вероятность кроссовера "))
+pm = float(input("Введите вероятность мутации "))
+kpovtor = int(input("Введите количество раз, когда лучшая особь повторяется в поколении "))
+individual_value = int(input("Введите количество особей в начальном поколении "))
+# m=8
+# n=4
+# a=10
+# b=20
+# pk=0.89
+# pm=0.8
+# kpovtor=4
+# individual_value=4
 
 array_start = [[random.randint(a,b) for i in range(0,n)] for j in range(0,m)]
 print("Массив заданий")
